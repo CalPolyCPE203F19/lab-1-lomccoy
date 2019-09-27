@@ -17,11 +17,11 @@ class Point
 	}
 	
 	public double getAngle(){
-         return(Math.toRadians(Math.tan(x/y)));
+         return((Math.atan(y/x)));
 	}
 
 	public Point rotate90(){
-         return(new Point(y*(-1),x)); 
+         return(new Point(-y,x)); 
 	}
 
 

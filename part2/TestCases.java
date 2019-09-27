@@ -39,12 +39,15 @@ public class TestCases
    @Test
    public void testGetAngle()
    {
-      assertEquals(Math.PI / 4, new Point(Math.sqrt(2)/2, Math.sqrt(2)/2).getAngle(), DELTA);
+      assertEquals(.78539816339, new Point(1, 1).getAngle(), DELTA);
    }
    @Test
    public void rotate90()
    {
-      assertEquals(new Point(-2.0, 1.0), new Point(1.0, 2.0).rotate90());
+      Point cereal = new Point(1.0,2.0);
+      Point box = cereal.rotate90();
+      assertEquals(-2.0, box.getX(), DELTA);
+      assertEquals(1.0, box.getY(), DELTA);
    }
 
    /*
