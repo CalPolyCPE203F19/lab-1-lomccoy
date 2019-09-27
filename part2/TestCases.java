@@ -34,17 +34,17 @@ public class TestCases
    @Test
    public void testGetRadius()
    {
-    //  assertEquals(1.0, new Point(1.0, 2.0).getX(), DELTA);
+      assertEquals(5.0, new Point(3.0, 4.0).getRadius(), DELTA);
    }
    @Test
    public void testGetAngle()
    {
-  //    assertEquals(1.0, new Point(1.0, 2.0).getX(), DELTA);
+      assertEquals(Math.PI / 4, new Point(Math.sqrt(2)/2, Math.sqrt(2)/2).getAngle(), DELTA);
    }
    @Test
    public void rotate90()
    {
-      assertEquals(1.0, new Point(1.0, 2.0).getX(), DELTA);
+      assertEquals(new Point(-2.0, 1.0), new Point(1.0, 2.0).rotate90());
    }
 
    /*
