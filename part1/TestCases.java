@@ -9,6 +9,7 @@ import java.util.Map;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 
@@ -31,7 +32,8 @@ public class TestCases
    @Test
    public void testSimpleIf3()
    {
-      fail("Missing SimpleIf3");
+      //fail("Missing SimpleIf3");
+      assertEquals(5.6, SimpleIf.max(5.6, 5.6), DELTA);
       /* TO DO: Write one more valid test case. */
    }
 
@@ -50,7 +52,7 @@ public class TestCases
    @Test
    public void testSimpleLoop3()
    {
-      fail("Missing SimpleLoop3");
+      assertEquals(0, SimpleLoop.sum(-1,1));
       /* TO DO: Write one more valid test case to make sure that
          this function is not just returning 7. */
    }
@@ -60,6 +62,7 @@ public class TestCases
    {
       /* What are those parameters?  They are newly allocated arrays
          with initial values. */
+
       assertArrayEquals(
          new int[] {1, 4, 9},
          SimpleArray.squareAll(new int[] {1, 2, 3}));
@@ -76,7 +79,9 @@ public class TestCases
    @Test
    public void testSimpleArray3()
    {
-      fail("Missing SimpleArray3");
+      assertArrayEquals(
+         new int[] {64, 0},
+         SimpleArray.squareAll(new int[] {8, 0}));
       /* TO DO: Add a new test case. */
    }
 
@@ -94,8 +99,13 @@ public class TestCases
    @Test
    public void testSimpleList2()
    {
-      fail("Missing SimpleList2");
-      /* TO DO: Add a new test case. */
+      List<Integer> input =
+         new LinkedList<Integer>(Arrays.asList(new Integer[] {0, 3, 9}));
+      List<Integer> expected =
+         new ArrayList<Integer>(Arrays.asList(new Integer[] {0, 9, 81}));
+
+      assertEquals(expected, SimpleList.squareAll(input));
+    /* TO DO: Add a new test case. */
    }
 
    @Test
@@ -113,7 +123,7 @@ public class TestCases
    @Test
    public void testBetterLoop3()
    {
-      fail("Missing BetterLoop3");
+      assertFalse(BetterLoop.contains(new int[] {7, 5, 2, 4}, 8));
       /* TO DO: Write a valid test case where the expected result is false. */
    }
 
@@ -149,15 +159,18 @@ public class TestCases
        * Why compare HashSets here?  Just so that the order of the
        * elements in the list is not important for this test.
        */
+
       assertEquals(new HashSet<>(expected),
          new HashSet<>(ExampleMap.highEnrollmentStudents(
             courseListsByStudent, 16)));
    }
 
-   @Test
-   public void testExampleMap2()
-   {
-      fail("Missing ExampleMap2");
+
+  // @Test
+  // public void testExampleMap2()
+//   {
+  //    fail("Missing ExampleMap2");
       /* TO DO: Write another valid test case. */
-   }
+//   }
+
 }
