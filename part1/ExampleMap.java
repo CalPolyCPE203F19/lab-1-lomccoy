@@ -11,16 +11,14 @@ class ExampleMap
       List<String> overEnrolledStudents = new LinkedList<>();
       for (Map.Entry<String, List<Course>> entry : courseListsByStudentName.entrySet())
 	{
-           // if entry.getValue().
-           // System.out.println(entry);
-            if(entry.getValue().size() * 4 > unitThreshold)
-		overEnrolledStudents.add(entry.getKey());
-            //tot_units = 0;
-            //for(Course stud_classes: entry.getValue())
-              //  tot_units += stud_classes[1];
+         //   if(entry.getValue().size() * 4 > unitThreshold)
+	//	overEnrolledStudents.add(entry.getKey());
+            tot_units = 0;
+            for(Course stud_classes: entry.getValue())
+                tot_units += stud_classes.getNumUnits();
             
-           // if(tot_units > unitThreshold)
-	//	overEnrolledStudents.add(entry);
+            if(tot_units > unitThreshold)
+		overEnrolledStudents.add(entry.getKey());
        
 	}
       /*
